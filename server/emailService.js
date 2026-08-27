@@ -81,7 +81,7 @@ const formatHTML = (data) => `
     
     <div class="footer">
       <p>This application was submitted successfully via the Website System.</p>
-      <p>&copy; ${new Date().getFullYear()} One Capital. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} People Fund. All rights reserved.</p>
     </div>
   </div>
 </body>

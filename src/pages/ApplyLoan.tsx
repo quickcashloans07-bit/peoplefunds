@@ -241,7 +241,7 @@ const ApplyLoan = () => {
       <footer className="bg-black py-12 mt-auto">
         <div className="container mx-auto px-4">
            <div className="text-center text-white/80" style={{ fontSize: "15px" }}>
-             Copyright © 2004-2026, One Capital Personal Loans, All Rights Reserved.
+             Copyright © 2004-2026, People Fund, All Rights Reserved.
            </div>
         </div>
       </footer>

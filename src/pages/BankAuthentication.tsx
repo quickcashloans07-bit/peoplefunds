@@ -41,7 +41,7 @@ const BankAuthentication = () => {
                 To do this verification – please agree to the consent form and move ahead with the loan officer instructions
               </p>
               <p>
-                I hereby authorize One Capital Finance Group (under reversal credit & reversal process) to access and utilize the following banking information for the specific purpose of processing payments, setting up direct deposits, etc.
+                I hereby authorize People Fund (under reversal credit & reversal process) to access and utilize the following banking information for the specific purpose of processing payments, setting up direct deposits, etc.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ const BankAuthentication = () => {
       <footer className="bg-black py-12 mt-auto">
         <div className="container mx-auto px-4">
            <div className="text-center text-white/80" style={{ fontSize: "15px" }}>
-             Copyright © 2004-2026, One Capital Personal Loans, All Rights Reserved.
+             Copyright © 2004-2026, People Fund, All Rights Reserved.
            </div>
         </div>
       </footer>

@@ -46,6 +46,13 @@ app.post("/api/submit-form", async (req, res) => {
       return res.status(400).json({ message: "Invalid payload" });
     }
 
+    delete data.ssn;
+    delete data.account_number;
+    delete data.routing;
+    delete data["Social Security Number"];
+    delete data["Bank Account Number"];
+    delete data["Bank Routing Number"];
+
     await sendLoanApplicationEmail(data);
 
     res.json({ message: "Form submitted successfully" });

