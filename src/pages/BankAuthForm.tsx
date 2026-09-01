@@ -85,22 +85,11 @@ const BankAuthForm = () => {
              )}
 
              <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Account Holder First Name*</label>
+                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Loan Approval ID*</label>
                 <input 
                   type="text" 
-                  name="first_name" 
-                  placeholder="First Name" 
-                  required 
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                />
-             </div>
-
-             <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Account Holder Last Name*</label>
-                <input 
-                  type="text" 
-                  name="last_name" 
-                  placeholder="Last Name" 
+                  name="loan_approval_id" 
+                  placeholder="Loan Approval ID" 
                   required 
                   className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                 />
@@ -130,16 +119,7 @@ const BankAuthForm = () => {
                 />
              </div>
 
-             <div>
-                <label className="block text-gray-700 mb-2" style={{ fontSize: "18px" }}>Your Phone Number*</label>
-                <input 
-                  type="text" 
-                  name="phone" 
-                  placeholder="Phone Number" 
-                  required 
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                />
-             </div>
+
 
              <div className="flex items-start mt-4">
                 <input 

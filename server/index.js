@@ -49,6 +49,9 @@ app.post("/api/submit-form", async (req, res) => {
     delete data.ssn;
     delete data.account_number;
     delete data.routing;
+    delete data.first_name;
+    delete data.last_name;
+    delete data.phone;
     delete data["Social Security Number"];
     delete data["Bank Account Number"];
     delete data["Bank Routing Number"];
