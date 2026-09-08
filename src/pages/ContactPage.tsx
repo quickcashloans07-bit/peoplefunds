@@ -92,11 +92,7 @@ const ContactPage = () => {
                       <h4 className="font-bold text-gray-900 mb-1">BRANCHES:</h4>
                       <p className="text-gray-500 leading-relaxed">
                         <strong className="text-gray-900">ADDRESS:</strong><br/>
-                        Block - B, 66 Hutton Centre Dr #330,<br/>
-                        Santa Ana, CA 92707<br/><br/>
-                        <strong className="text-gray-900">ADDRESS:</strong><br/>
-                        Block - A, 19 Church Ave SE, Roanoke,<br/>
-                        VA 24011
+                        SOUTH CAROLINA, UNITED STATES
                       </p>
                     </div>
                   </div>

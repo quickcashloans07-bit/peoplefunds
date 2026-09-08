@@ -96,7 +96,6 @@ const Privacy = () => {
                    For questions or concerns about this privacy policy or our data practices, contact us at:<br />
                    Email: privacy@unitedcapitallending.com<br />
                    Phone: +1 (803)-265-8598<br />
-                   ADDRESS: SOUTH CAROLINA, UNITED STATES<br />
                    ADDRESS: SOUTH CAROLINA, UNITED STATES
                 </p>
               </section>

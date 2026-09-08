@@ -43,10 +43,6 @@ const Footer = () => {
                       <span className="font-semibold text-white">ADDRESS:</span><br/>
                       SOUTH CAROLINA, UNITED STATES
                     </div>
-                    <div>
-                      <span className="font-semibold text-white">ADDRESS:</span><br/>
-                      SOUTH CAROLINA, UNITED STATES
-                    </div>
                   </div>
                 </div>
               </div>

@@ -92,7 +92,6 @@ const Terms = () => {
                    For questions regarding these terms, please contact us at:<br />
                    Email: legal@unitedcapitallending.com<br />
                    Phone: +1 (803)-265-8598<br />
-                   ADDRESS: SOUTH CAROLINA, UNITED STATES<br />
                    ADDRESS: SOUTH CAROLINA, UNITED STATES
                 </p>
               </section>

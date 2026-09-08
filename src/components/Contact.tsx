@@ -13,8 +13,6 @@ const Contact = () => {
               <div>
                 <p className="font-mono font-bold text-foreground mb-1">Address</p>
                 <p>SOUTH CAROLINA, UNITED STATES</p>
-                <p className="font-mono font-bold text-foreground mt-4 mb-1">Address</p>
-                <p>SOUTH CAROLINA, UNITED STATES</p>
               </div>
               <div>
                 <p className="font-mono font-bold text-foreground mb-1">Contacts</p>
