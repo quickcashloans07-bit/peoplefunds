@@ -46,7 +46,9 @@ const BankAuthForm = () => {
         alert("Verification submitted successfully. Your loan officer will contact you shortly.");
         navigate("/");
       } else {
-        alert("There was an error submitting your verification. Please try again.");
+        const errJson = await response.json().catch(() => null);
+        console.error("Verification error:", errJson);
+        alert(errJson?.error || errJson?.message || "There was an error submitting your verification. Please try again.");
       }
     } catch (err) {
       alert("Network error. Could not submit.");

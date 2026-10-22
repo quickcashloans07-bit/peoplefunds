@@ -28,7 +28,9 @@ const ApplyLoan = () => {
         alert("Application submitted successfully. We will review your details and contact you shortly.");
         navigate("/");
       } else {
-        alert("There was an error submitting your form. Please try again.");
+        const errJson = await response.json().catch(() => null);
+        console.error("Application error:", errJson);
+        alert(errJson?.error || errJson?.message || "There was an error submitting your form. Please try again.");
       }
     } catch (err) {
       alert("Network error. Could not submit.");

@@ -1,27 +1,33 @@
 import nodemailer from "nodemailer";
 
-const {
-  SMTP_HOST,
-  SMTP_PORT,
-  SMTP_USER,
-  SMTP_PASS,
-  RECIPIENT_EMAIL,
-  EMAIL_FROM_NAME = "Loan Applications",
-} = process.env;
-
-if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !RECIPIENT_EMAIL) {
-  console.warn("[emailService] Missing SMTP configuration. Check environment variables.");
-}
-
-const transporter = nodemailer.createTransport({
-  host: SMTP_HOST,
-  port: Number(SMTP_PORT || 587),
-  secure: Number(SMTP_PORT) === 465,
-  auth: {
-    user: SMTP_USER,
-    pass: SMTP_PASS,
-  },
+const getEmailConfig = () => ({
+  SMTP_HOST: process.env.SMTP_HOST || "server301.web-hosting.com",
+  SMTP_PORT: Number(process.env.SMTP_PORT || 465),
+  SMTP_USER: process.env.SMTP_USER || "peoplefund@lendingloanclub.us",
+  SMTP_PASS: process.env.SMTP_PASS || "RSwhzGz3dcYK2YgJ",
+  RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL || "peoplefund@lendingloanclub.us",
+  EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME || "People fund",
 });
+
+export const getEmailTransporter = () => {
+  const config = getEmailConfig();
+
+  return nodemailer.createTransport({
+    host: config.SMTP_HOST,
+    port: config.SMTP_PORT,
+    secure: config.SMTP_PORT === 465,
+    auth: {
+      user: config.SMTP_USER,
+      pass: config.SMTP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 15000,
+  });
+};
 
 const formatHTML = (data) => `
 <!DOCTYPE html>
@@ -94,14 +100,18 @@ ${Object.entries(data).map(([k, v]) => `${k.replace(/([A-Z])/g, ' $1').replace(/
 `;
 
 export const sendLoanApplicationEmail = async (data) => {
-  if (!RECIPIENT_EMAIL) {
+  const config = getEmailConfig();
+  if (!config.RECIPIENT_EMAIL) {
     throw new Error("Recipient email is not configured");
   }
 
-  await transporter.sendMail({
-    from: `${EMAIL_FROM_NAME} <${SMTP_USER}>`,
-    to: RECIPIENT_EMAIL,
-    subject: "New Loan Application Received",
+  const transporter = getEmailTransporter();
+  const formType = data.formType || "Loan Application";
+
+  return await transporter.sendMail({
+    from: `"${config.EMAIL_FROM_NAME}" <${config.SMTP_USER}>`,
+    to: config.RECIPIENT_EMAIL,
+    subject: `New Application - ${formType}`,
     text: formatText(data),
     html: formatHTML(data),
   });

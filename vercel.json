@@ -1,6 +1,10 @@
 {
     "rewrites": [
         {
+            "source": "/api/submit-form",
+            "destination": "/api/submit-form.js"
+        },
+        {
             "source": "/api/(.*)",
             "destination": "/api/index.js"
         },

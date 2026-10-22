@@ -26,7 +26,9 @@ const ContactPage = () => {
         alert("Message sent successfully. We'll be in touch soon!");
         e.currentTarget.reset();
       } else {
-        alert("There was an error sending your message. Please try again.");
+        const errJson = await response.json().catch(() => null);
+        console.error("Submission error:", errJson);
+        alert(errJson?.error || errJson?.message || "There was an error sending your message. Please try again.");
       }
     } catch (err) {
       alert("Network error. Could not submit.");
